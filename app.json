@@ -3,7 +3,9 @@
     "name": "registro-activos",
     "slug": "registro-activos",
     "scheme": "registroactivos",
-    "platforms": ["android"],
+    "platforms": [
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,10 +16,13 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+        "foregroundImage": "./assets/icon.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.chikis12.registroactivos"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -27,9 +32,23 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Permitir $(PRODUCT_NAME) acceder a la cámara para escanear códigos QR de los activos"
+          "cameraPermission": "Permitir $(PRODUCT_NAME) acceder a la cámara"
         }
-      ]
-    ]
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "backgroundColor": "#ffffff",
+          "resizeMode": "contain"
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1fe5c88e-1e04-4165-928c-602976b41401"
+      }
+    }
   }
 }
